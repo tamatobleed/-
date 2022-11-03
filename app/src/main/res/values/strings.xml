@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SofeWare</string>
+    <string name="title_home">Home</string>
+    <string name="title_math">Math</string>
+    <string name="title_art">Art</string>
+
+</resources>

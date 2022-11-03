@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SofeWare.iml" filepath="$PROJECT_DIR$/.idea/modules/SofeWare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SofeWare.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SofeWare.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SofeWare.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SofeWare.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SofeWare.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SofeWare.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SofeWare.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SofeWare.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>
