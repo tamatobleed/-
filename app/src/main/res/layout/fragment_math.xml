@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/new_blue"
     tools:context=".ui.math.MathFragment">
+
 
     <TextView
         android:id="@+id/text_math"
@@ -19,4 +21,161 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_math_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:text="@string/title_math"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04"/>
+
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/rect_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_math_title"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_caculate_outline"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:src="@drawable/rect_outline"
+        app:layout_constraintBottom_toBottomOf="@id/iv_background"
+        app:layout_constraintEnd_toEndOf="@id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_background"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintVertical_bias="0.04"
+        app:layout_constraintStart_toStartOf="@id/iv_background"
+        />
+
+    <TextView
+        android:id="@+id/tv_caculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/caculate"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_caculate_outline"
+        app:layout_constraintEnd_toEndOf="@id/iv_caculate_outline"
+        app:layout_constraintTop_toTopOf="@id/iv_caculate_outline"
+        app:layout_constraintHorizontal_bias="0.70"
+        app:layout_constraintStart_toStartOf="@id/iv_caculate_outline"  />
+
+    <ImageView
+        android:id="@+id/imageiv_caculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_home_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_caculate"
+        app:layout_constraintEnd_toStartOf="@id/tv_caculate"
+        app:layout_constraintTop_toTopOf="@id/tv_caculate"
+        app:layout_constraintStart_toStartOf="@id/iv_background"
+        app:layout_constraintHorizontal_bias="0.90"
+        />
+
+    <TextView
+        android:id="@+id/tv_question1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/math_question1"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_background"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintStart_toStartOf="@id/iv_caculate_outline" />
+
+    <TextView
+        android:id="@+id/tv_question2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/math_question2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_background"
+        app:layout_constraintVertical_bias="0.40"
+        app:layout_constraintStart_toStartOf="@id/iv_caculate_outline" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:inputType="phone"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/rect_outline"
+        app:layout_constraintBottom_toBottomOf="@id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_background"
+        app:layout_constraintVertical_bias="0.23"
+        app:layout_constraintStart_toStartOf="@id/iv_caculate_outline"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:inputType="phone"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/rect_outline"
+        app:layout_constraintBottom_toBottomOf="@id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_background"
+        app:layout_constraintVertical_bias="0.52"
+        app:layout_constraintStart_toStartOf="@id/iv_caculate_outline"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/math_button_bottom"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="@color/new_blue"
+        app:layout_constraintBottom_toBottomOf="@id/iv_background"
+        app:layout_constraintEnd_toEndOf="@id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_background"
+        app:layout_constraintStart_toStartOf="@id/iv_background"
+        app:layout_constraintVertical_bias="0.92"
+        />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/math_button_top"
+        android:backgroundTint="@color/new_blue"
+        app:layout_constraintBottom_toBottomOf="@id/iv_caculate_outline"
+        app:layout_constraintEnd_toEndOf="@id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_caculate_outline"
+        app:layout_constraintStart_toStartOf="@id/iv_background"
+        app:layout_constraintHorizontal_bias="0.88"/>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_three_dots"
+        app:layout_constraintBottom_toBottomOf="@id/tv_math_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_math_title"
+        app:layout_constraintStart_toStartOf="@id/tv_math_title"
+        app:layout_constraintHorizontal_bias="0.80" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

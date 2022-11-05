@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">SofeWare</string>
-    <string name="title_home">Home</string>
-    <string name="title_math">Math</string>
-    <string name="title_art">Art</string>
+    <string name="title_home">首页</string>
+    <string name="title_math">数学</string>
+    <string name="title_art">美术</string>
+    <string name="caculate">运算</string>
+    <string name="math_question2">添加数字范围</string>
+    <string name="math_question1">添加问题数量</string>
+    <string name="math_button_bottom">开始生成</string>
+    <string name="math_button_top">加减运算</string>
 
 </resources>
