@@ -1,7 +1,7 @@
 package yunsuan;
 
 public class calculate {
-    String cal(String[] all) {
+    String cal(String[] all,int time,int avg) {
 
         int i;
         for (i = 1; i < all.length; i = i + 2)
