@@ -6,7 +6,17 @@
     <string name="caculate">运算</string>
     <string name="math_question2">添加数字范围</string>
     <string name="math_question1">添加问题数量</string>
-    <string name="math_button_bottom">开始生成</string>
+    <string name="math_button_bottom">生成问题</string>
     <string name="math_button_top">加减运算</string>
+    <string name="math_question">问题</string>
+    <string name="math_answer">请输入问题答案</string>
+    <string name="math_answer_confirm">确认</string>
+    <string name="math_answer_hand_in">上交答卷</string>
+    <string name="math_score_words">共获得6/10分！请再接再厉!</string>
+    <string name="math_complete">完成答题</string>
+    <string name="back">返回</string>
+    <string name="math_answer_check">查看答题情况</string>
+    <string name="congratulation">恭喜！！</string>
+    <string name="create_picture">生成图像</string>
 
 </resources>

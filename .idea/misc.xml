@@ -12,8 +12,12 @@
         <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/drawable/rect_gray.xml" value="0.1" />
         <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/drawable/rect_outline.xml" value="0.1" />
         <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/layout/fragment_art.xml" value="0.146875" />
-        <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/layout/fragment_math.xml" value="0.16666666666666666" />
+        <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/layout/art_origin_picture_item.xml" value="0.14583333333333334" />
+        <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/layout/fragment_art.xml" value="0.1" />
+        <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/layout/fragment_math.xml" value="0.22" />
+        <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/layout/fragment_math_question.xml" value="0.14583333333333334" />
+        <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/layout/fragment_math_question_all.xml" value="0.10666666666666667" />
+        <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/layout/fragment_question_score.xml" value="0.14583333333333334" />
         <entry key="..\:/360seekdownroad/software5/software5/app/src/main/res/menu/bottom_nav_menu.xml" value="0.146875" />
       </map>
     </option>

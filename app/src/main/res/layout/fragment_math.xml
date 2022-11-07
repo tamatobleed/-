@@ -154,17 +154,7 @@
         app:layout_constraintVertical_bias="0.92"
         />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:text="@string/math_button_top"
-        android:backgroundTint="@color/new_blue"
-        app:layout_constraintBottom_toBottomOf="@id/iv_caculate_outline"
-        app:layout_constraintEnd_toEndOf="@id/iv_background"
-        app:layout_constraintTop_toTopOf="@id/iv_caculate_outline"
-        app:layout_constraintStart_toStartOf="@id/iv_background"
-        app:layout_constraintHorizontal_bias="0.88"/>
+
 
     <ImageView
         android:id="@+id/imageView4"
@@ -176,6 +166,17 @@
         app:layout_constraintTop_toTopOf="@id/tv_math_title"
         app:layout_constraintStart_toStartOf="@id/tv_math_title"
         app:layout_constraintHorizontal_bias="0.80" />
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+
+        android:id="@+id/spinner"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_caculate_outline"
+        app:layout_constraintEnd_toEndOf="@id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_caculate_outline"
+        app:layout_constraintStart_toStartOf="@id/iv_background"
+        app:layout_constraintHorizontal_bias="0.88" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
