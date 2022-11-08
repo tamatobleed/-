@@ -33,21 +33,38 @@
         android:layout_marginStart="25dp"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
+
+
+    <ImageView
+        android:id="@+id/iv_question_outline"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:inputType="phone"
-        android:textSize="25sp"
-        android:textStyle="bold"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/rect_outline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.23"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="@string/app_name"
+        android:background="@drawable/rect_outline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.23"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <EditText
+        android:id="@+id/ed_answer"
         android:layout_width="match_parent"
         android:layout_height="95dp"
         android:inputType="phone"
@@ -60,6 +77,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"/>
+
 
 
 

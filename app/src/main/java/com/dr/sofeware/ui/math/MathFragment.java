@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -20,6 +21,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.dr.sofeware.R;
 import com.dr.sofeware.databinding.FragmentMathBinding;
 import com.jaredrummler.materialspinner.MaterialSpinner;
+
+import java.util.Objects;
 
 //TODO：MATH
 // 1，导航图添加转跳至做题界面 ✓，viewModel传输数据✓；
@@ -56,11 +59,16 @@ public class MathFragment extends Fragment  {
                              ViewGroup container, Bundle savedInstanceState) {
         viewModel = new ViewModelProvider(this).get(MathViewModel.class);
         binding = FragmentMathBinding.inflate(inflater, container, false);
-        viewinit();
+
         return binding.getRoot();
     }
 
-    private void viewinit() {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        initView();
+    }
+
+    private void initView() {
         MaterialSpinner spinner =  binding.spinner;
         spinner.setItems("加减运算", "乘除运算", "四则运算");
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
@@ -91,11 +99,24 @@ public class MathFragment extends Fragment  {
             }
         });
 
+        binding.spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(MaterialSpinner view, int position, long id, Object item) {
+                viewModel.setMode(String.valueOf(position));
+            }
+        });
+
         binding.mathBottomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).
-                        navigate(R.id.action_navigation_math_to_mathQuestionsFragment);
+                if(!Objects.equals(binding.edNum.getText().toString(), "0") &&
+                        !Objects.equals(binding.edNum.getText().toString(), "")&&
+                        !Objects.equals(binding.edAvg.getText().toString(), "")&&
+                        !Objects.equals(binding.edAvg.getText().toString(), "")){
+                    Navigation.findNavController(v).
+                            navigate(R.id.action_navigation_math_to_mathQuestionsFragment);
+                }
+
             }
         });
 
@@ -106,6 +127,8 @@ public class MathFragment extends Fragment  {
                         navigate(R.id.action_global_navigation_home);
             }
         });
+
+
     }
 
 
