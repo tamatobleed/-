@@ -11,16 +11,43 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
+
     <fragment
         android:id="@+id/navigation_math"
         android:name="com.dr.sofeware.ui.math.MathFragment"
         android:label="@string/title_math"
-        tools:layout="@layout/fragment_math" />
+        tools:layout="@layout/fragment_math" >
+        <action
+            android:id="@+id/action_navigation_math_to_mathQuestionsFragment"
+            app:destination="@id/mathQuestionsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_art"
         android:name="com.dr.sofeware.ui.art.ArtFragment"
         android:label="@string/title_art"
         tools:layout="@layout/fragment_art" />
+
+    <fragment
+        android:id="@+id/mathQuestionsFragment"
+        android:name="com.dr.sofeware.ui.math.MathQuestionsFragment"
+        android:label="fragment_math_questions"
+        tools:layout="@layout/fragment_math_questions" >
+        <action
+            android:id="@+id/action_mathQuestionsFragment_to_mathScoreFragment"
+            app:destination="@id/mathScoreFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mathScoreFragment"
+        android:name="com.dr.sofeware.ui.math.MathScoreFragment"
+        android:label="fragment_math_score"
+        tools:layout="@layout/fragment_math_score" />
+
+    <action android:id="@+id/action_global_navigation_home"
+        app:destination="@id/navigation_home"/>
+
+
+
 
 </navigation>

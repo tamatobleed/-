@@ -55,9 +55,6 @@ public class ArtFragment extends Fragment {
         ScrollingPagerIndicator recyclerIndicator = binding.indicator;
         recyclerIndicator.attachToRecyclerView(recyclerView_left);
 
-
-        final TextView textView = binding.textArt;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

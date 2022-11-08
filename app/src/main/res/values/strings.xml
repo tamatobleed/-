@@ -18,5 +18,8 @@
     <string name="math_answer_check">查看答题情况</string>
     <string name="congratulation">恭喜！！</string>
     <string name="create_picture">生成图像</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="positive_integer">输入一个正整数</string>
 
 </resources>
