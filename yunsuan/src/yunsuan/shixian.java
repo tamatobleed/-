@@ -8,65 +8,56 @@ import java.util.Random;
  *
  *
  */
-public  class shixian implements jiekou {
-    int k = 0;
-   int time=0;
-   int shuliang=0;//题目数量
+
+/**
+ *
+ *
+ *
+ *
+ */
+public  class shixian implements math_interface {
+
+    int time=0;
+    int shuliang=0;//题目数量
     String []answer =new String[10000];
-    ArrayList<String> wrong =new ArrayList<String>();
+    ArrayList<String> ques =new ArrayList<String>();
+    ArrayList<String> formul=new ArrayList<String>();
     String []question =new String[10000];//在new对象时创建放置
     int p = 0;
 
-    public  String shengcheng(Integer time ,Integer avg,Integer mode) {
-        shuliang=time ;
-           int a=0;
-        for(int i=0;i<time;i++){
+    public  ArrayList<String> createFormuls(Integer num ,Integer avg ,Integer mode)
+    {
+        shuliang=num ;
+        int a=0;
+        for(int i=0;i<num;i++){
             suanshi(i,avg,mode);
             a=Integer.parseInt(answer[i]);
             if(question[i]=="0"||a<=0) suanshi(i,avg,mode);
-            if(question[i]=="0"||a<=0) suanshi(i,avg,mode);
+            if(question[i]=="0"||a==1) suanshi(i,avg,mode);
+            formul.add(question[i]+"="+answer[i]);
+            ques.add(question[i]+"=");
+
         }
-        if(question.length!=0)return "生成失败";
-        question=replaceNull(question);
-        answer=replaceNull(answer);
-         return  "生成成功";
+
+        return  formul;
+
+
+
     }
 
+    public  ArrayList<String> createQuestions(ArrayList<String> Formuls)
+    {   return ques;}
 
 
-    public String getquestion(Integer n){
-        return  question[n-1];
-    }
 
 
-    
 
     @Override
-    public String getconclusion(ArrayList<String> a) {
+    public String checkAnswers(ArrayList<String> questions,ArrayList<String> answers) {
+        for(int i=0;i<shuliang;i++){if(answers.get(i).equals(answer[i]))time++;}
 
-
-        return time+"/"+shuliang;
+        return "共获得"+time+"/"+shuliang+"分！请再接再厉！";
     }
-
-    @Override
-    public ArrayList<String> getallwrong() {
-        return wrong;
-    }
-
-    public String  compare(Integer input,Integer num){
-        int a=Integer.parseInt(answer[num]);
-        if(input==a) {time++;return "答案正确";}
-        else{
-            boolean add = wrong.add(question[num - 1] + "=" + answer[num - 1]);
-            p++; return "答案错误";}
-
-    }//输入答案，由程序进行比较.输出"答案正确"或"答案错误"
-    public String answer(Integer i){
-        if(answer[i-1].equals(""))return "算式未开始生成";
-       else return answer[i-1];
-
-    }
-    //获取当前题目答案
 
     //生成算式的方法
     private  String[] guolv(String[] all){
@@ -120,7 +111,7 @@ public  class shixian implements jiekou {
     public    String suanshi(int i ,int avg,int mode) {
 
 
-        k = random2and3();            //是生成两还是三个数
+        int k = random2and3();            //是生成两还是三个数
         String[] num = new String[k];
         String[] fu = new String[k - 1];
         String[] all = new String[2 * k - 1];
@@ -150,8 +141,8 @@ public  class shixian implements jiekou {
         }
         all = guolv(all);
        String que="";
-        for (int k = 0; k < all.length; k++) {
-            que = que + all[k];
+        for (int kt = 0; kt < all.length; kt++) {
+            que = que + all[kt];
         }
         all = turn(all);
         question[i]=que;
@@ -188,14 +179,9 @@ public  class shixian implements jiekou {
 
         String fu="";
 
-        if(mode==2){int k=d.nextInt(4);
-            if(k==0)fu="+";
-        if(k==1)fu="-";
-        if(k==2)fu="x";
-        if(k==3)fu="÷";}
-        if(mode==1){int k=d.nextInt(2); if(k==0)fu="+";
-            if(k==1)fu="-";}
-
+        if(mode==2){int k=d.nextInt(4);if(k==0)fu="+";if(k==1)fu="-";if(k==2)fu="x";if(k==3)fu="÷";}
+        if(mode==1){int k=d.nextInt(2); if(k==0)fu="x";if(k==1)fu="÷";}
+        if(mode==0){int k=d.nextInt(2); if(k==0)fu="+";if(k==1)fu="-";}
         return fu;
     }
     private String[] replaceNull(String[] str){
