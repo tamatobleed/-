@@ -1,20 +1,8 @@
 package yunsuan;
+
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- *
- *
- *
- *
- */
-
-/**
- *
- *
- *
- *
- */
 public  class shixian implements math_interface {
 
     int time=0;
@@ -22,6 +10,8 @@ public  class shixian implements math_interface {
     String []answer =new String[10000];
     ArrayList<String> ques =new ArrayList<String>();
     ArrayList<String> formul=new ArrayList<String>();
+
+    ArrayList<String> wronganswer =new ArrayList<String>();
     String []question =new String[10000];//在new对象时创建放置
     int p = 0;
 
@@ -54,9 +44,14 @@ public  class shixian implements math_interface {
 
     @Override
     public String checkAnswers(ArrayList<String> questions,ArrayList<String> answers) {
-        for(int i=0;i<shuliang;i++){if(answers.get(i).equals(answer[i]))time++;}
+        for(int i=0;i<shuliang;i++){if(answers.get(i).equals(answer[i]))time++;else {wronganswer.add(formul.get(i));}}
 
         return "共获得"+time+"/"+shuliang+"分！请再接再厉！";
+    }
+
+    @Override
+    public ArrayList<String> wronganswer() {
+        return wronganswer;
     }
 
     //生成算式的方法

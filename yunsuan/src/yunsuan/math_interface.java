@@ -37,6 +37,11 @@ interface math_interface{
      * @return 返回的字符串结果，如:共获得8/10分！请再接再厉！
      */
     String checkAnswers(ArrayList<String> questions,ArrayList<String> answers);//输入答案与题目个数，由程序进行比较.返回“对”“错”
+    ArrayList<String> wronganswer();//获取本次生成对象的错误题目
+    /**可以通过字节流进一步改进，加入长期错题与加入错题清除算法
+     *
+     *
+     */
 
 
 }
