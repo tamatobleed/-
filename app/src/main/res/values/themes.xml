@@ -17,6 +17,7 @@
         <item name="android:colorControlActivated">?colorPrimary</item>
     </style>
 
+
     <!--浅灰-->
     <color name="text_normal">#8F8F94</color>
 </resources>
