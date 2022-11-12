@@ -3,17 +3,21 @@ package com.dr.sofeware.ui.math;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import com.dr.sofeware.utils.MathMethod;
+
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class MathViewModel extends ViewModel {
-    private final MutableLiveData<String> mNum;
-    private final MutableLiveData<String> mAvg;
-    private final MutableLiveData<String> mMode;
 
-    MathUtils mathUtils=new MathUtils();
+    private  MutableLiveData<String> mNum;
+    private  MutableLiveData<String> mAvg;
+    private  MutableLiveData<String> mMode;
 
-    ArrayList<String> Formuls;
+    private  ArrayList<String> formuls;
+    private  ArrayList<String> questions;
+    private  ArrayList<String> answers;
+
+    private MathMethod mathMethod=new MathMethod();
 
     public MathViewModel() {
         mNum = new MutableLiveData<>();
@@ -23,6 +27,7 @@ public class MathViewModel extends ViewModel {
         mAvg.setValue("0");
         mMode.setValue("0");
     }
+
 
     public LiveData<String> getNum() {
         return mNum;
@@ -34,6 +39,13 @@ public class MathViewModel extends ViewModel {
         return mMode;
     }
 
+    public ArrayList<String> getFormuls() {
+        return formuls;
+    }
+    public ArrayList<String> getQuestions() {
+        return questions;
+    }
+    public ArrayList<String> getAnswers() {return answers;}
 
     public void setNum(String num){
         mNum.setValue(num);
@@ -41,20 +53,27 @@ public class MathViewModel extends ViewModel {
     public void setAvg(String avg){
         mAvg.setValue(avg);
     }
-    public void setMode(String mode){
-        mMode.setValue(mode);
+    public void setMode(String mode){mMode.setValue(mode);}
+
+    public void createFormuls(){
+            formuls= mathMethod.createFormuls(
+                    Integer.parseInt(mNum.getValue()),
+                    Integer.parseInt(mAvg.getValue()),
+                    Integer.parseInt(mMode.getValue()));
+            questions=mathMethod.createQuestions(formuls);
+            answers=new ArrayList<String>(formuls.size());
+        for (int i = 0; i < formuls.size(); i++) {
+            answers.add("无回答");
+        }
+
     }
 
-    public boolean createFormuls(){
-        if(Objects.equals(mNum.getValue(), "0") || Objects.equals(mAvg.getValue(), "0")){
-            return false;
-        }else{
-            Formuls=mathUtils.createFormuls(
-                    Integer.getInteger(Objects.requireNonNull(mNum.getValue())),
-                    Integer.getInteger(Objects.requireNonNull(mAvg.getValue())),
-                    Integer.getInteger(Objects.requireNonNull(mMode.getValue())));
-            return true;
-        }
+    public String createScore(){
+        return mathMethod.checkAnswers(formuls,answers);
+    }
+
+    public void uploadAnswer(int position,String answer){
+        answers.set(position,answer);
     }
 
 }

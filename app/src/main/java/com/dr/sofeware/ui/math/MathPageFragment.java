@@ -15,7 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.dr.sofeware.R;
-import com.dr.sofeware.databinding.FragmentMathBinding;
+
 import com.dr.sofeware.databinding.FragmentMathQuestionPageBinding;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
@@ -25,18 +25,21 @@ import com.jaredrummler.materialspinner.MaterialSpinner;
  * @Author DR.LHXY
  * @Date 11-08-2022 周二 22:06
  */
-
-//TODO:上传答案时
 public class MathPageFragment extends Fragment {
-    public static final String ARG_OBJECT = "object";
 
     private FragmentMathQuestionPageBinding binding;
 
     private MathViewModel viewModel;
 
+    private final int position;
+
+    public MathPageFragment(int position,MathViewModel viewModel){
+        this.position=position;
+        this.viewModel=viewModel;
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        viewModel = new ViewModelProvider(this).get(MathViewModel.class);
         binding = FragmentMathQuestionPageBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -44,12 +47,11 @@ public class MathPageFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         initView();
-        Bundle args = getArguments();
-        ((TextView) view.findViewById(android.R.id.text1))
-                .setText(Integer.toString(args.getInt(ARG_OBJECT)));
     }
 
     private void initView() {
+        binding.tvQuestion.setText(viewModel.getQuestions().get(position));
+
         binding.edAnswer.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -57,6 +59,7 @@ public class MathPageFragment extends Fragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override
             public void afterTextChanged(Editable s) {
+                viewModel.uploadAnswer(position,s.toString());
             }
         });
     }

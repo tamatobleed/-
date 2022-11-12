@@ -12,17 +12,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.ViewPager2;
+
 
 import com.dr.sofeware.R;
-import com.dr.sofeware.databinding.FragmentMathBinding;
+
 import com.dr.sofeware.databinding.FragmentMathQuestionsBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
@@ -42,33 +43,50 @@ public class MathQuestionsFragment extends Fragment {
 
     private FragmentMathQuestionsBinding binding;
 
-    private QuestionsTabAdapter questionsTabAdapter;
-
     private MathViewModel viewModel;
 
-    private ViewPager2 viewPager;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        viewModel = new ViewModelProvider(this).get(MathViewModel.class);
+        viewModel = new ViewModelProvider(requireActivity()).get(MathViewModel.class);
         binding = FragmentMathQuestionsBinding.inflate(inflater, container, false);
-        viewPager = binding.viewpager;
-        viewModel.createFormuls();
         return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        questionsTabAdapter = new QuestionsTabAdapter(this);
+        //填充数据
+        QuestionsTabAdapter questionsTabAdapter = new QuestionsTabAdapter(this, viewModel);
+        binding.viewpager.setAdapter(questionsTabAdapter);
 
-        viewPager.setAdapter(questionsTabAdapter);
-        TabLayout tabLayout = binding.tabLayout;
+        TabLayoutMediator mediator = new TabLayoutMediator(binding.tabLayout, binding.viewpager,
+                new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                int a=position+1;
+                tab.setText(a+"");
+            }
+        });
+        mediator.attach();
 
-        new TabLayoutMediator(tabLayout, viewPager,
-                (tab, position) -> tab.setText("OBJECT " + (position + 1))
-        ).attach();
 
+        binding.imageivBackHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).
+                        navigate(R.id.action_global_navigation_home);
+            }
+        });
+
+        //TODO：交卷按钮
+        binding.mathUploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).
+                        navigate(R.id.action_mathQuestionsFragment_to_mathScoreFragment);
+            }
+        });
     }
 
 

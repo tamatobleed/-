@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import java.util.ArrayList;
+
 /**
  * @Description TODO
  * @systemUser admin
@@ -14,22 +16,23 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
  */
 public class QuestionsTabAdapter extends FragmentStateAdapter {
 
-    public QuestionsTabAdapter(Fragment fragment) {
+    private final MathViewModel viewModel;
+
+    public QuestionsTabAdapter(Fragment fragment, MathViewModel viewModel) {
         super(fragment);
+        this.viewModel=viewModel;
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        Fragment fragment = new MathPageFragment();
-        Bundle args = new Bundle();
-        args.putInt(MathPageFragment.ARG_OBJECT, position + 1);
-        fragment.setArguments(args);
-        return fragment;
+        return new MathPageFragment(position,viewModel);
     }
 
     @Override
     public int getItemCount() {
-        return 100;
+        return viewModel.getFormuls().size();
     }
+
+
 }

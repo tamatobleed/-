@@ -7,7 +7,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_cup"
         android:layout_width="324dp"
         android:layout_height="408dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,7 @@
         android:layout_marginStart="20dp"
         app:layout_constraintVertical_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_cup" />
 
     <TextView
         android:id="@+id/tv_score"
@@ -50,6 +50,7 @@
         android:textSize="20sp"
         android:backgroundTint="#FFFF8C8C"
         android:textStyle="bold"
+        android:clickable="true"
         app:layout_constraintTop_toTopOf="@id/tv_score"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline_ver_50"
@@ -63,6 +64,7 @@
         android:text="@string/back"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:clickable="true"
         android:backgroundTint="#FF4A8FFF"
         app:layout_constraintTop_toTopOf="@id/tv_score"
         app:layout_constraintStart_toEndOf="@id/guideline_ver_50"
@@ -89,5 +91,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.07"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_score"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_cup"
+        app:layout_constraintTop_toTopOf="@+id/iv_cup"
+        app:layout_constraintEnd_toEndOf="@+id/iv_cup"
+        app:layout_constraintStart_toStartOf="@+id/iv_cup"
+        android:visibility="invisible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_score"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

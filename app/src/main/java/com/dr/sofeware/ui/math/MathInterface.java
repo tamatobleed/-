@@ -16,7 +16,7 @@ interface MathInterface{
      * 算式生成函数（默认中间过程或接口可能含有负数，无分数，长度为2）
      * @param num  生成题目数量
      * @param avg  题目的过程量，结果量的最大数字
-     * @param mode 1->加减法；2->乘除法;3->加减乘除
+     * @param mode 0->加减法；1->乘除法;2->加减乘除
      * @return 完全的算式字符串的数组，如：2+2=4，...
      */
     ArrayList<String> createFormuls(Integer num ,Integer avg ,Integer mode);
