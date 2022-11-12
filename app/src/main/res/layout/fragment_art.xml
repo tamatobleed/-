@@ -27,45 +27,83 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:src="@drawable/rect_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_math_title"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintVertical_bias="1.0" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:id="@+id/recycler_left"
-            android:orientation="vertical"
-            android:scrollbars="vertical"
-            app:layoutManager="LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="@id/guideline_hor_35"
-            app:layout_constraintEnd_toEndOf="@id/guideline_ver_50"
-            app:layout_constraintStart_toStartOf="@id/iv_background"
-            app:layout_constraintTop_toTopOf="@id/iv_background"/>
+    <ImageView
+        android:id="@+id/iv_left_outline"
+        android:background="@color/trans"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/rect_outline"
+        android:layout_weight="1"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="22dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_45"
+        app:layout_constraintEnd_toEndOf="@id/guideline_ver_50"
+        app:layout_constraintStart_toStartOf="@id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_background"
+        />
+
+    <ImageView
+        android:id="@+id/iv_right_outline"
+        android:background="@color/trans"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/rect_outline"
+        android:layout_weight="1"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_45"
+        app:layout_constraintEnd_toEndOf="@id/iv_background"
+        app:layout_constraintStart_toStartOf="@id/guideline_ver_50"
+        app:layout_constraintTop_toTopOf="@id/iv_background"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_45"
+        app:layout_constraintEnd_toEndOf="@id/guideline_ver_50"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_background"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_art_origin_picture" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="5dp"
         android:orientation="vertical"
-        android:scrollbars="vertical"
+        android:scrollbars="none"
         app:layoutManager="LinearLayoutManager"
         android:id="@+id/recycler_right"
-        tools:listitem="@layout/art_origin_picture_item"
-        tools:itemCount="5"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_35"
+        tools:listitem="@layout/item_art_origin_picture"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_45"
         app:layout_constraintEnd_toEndOf="@id/iv_background"
         app:layout_constraintStart_toStartOf="@id/guideline_ver_50"
         app:layout_constraintTop_toTopOf="@id/iv_background"/>
@@ -75,10 +113,12 @@
         android:id="@+id/indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/recycler_left"
+        app:layout_constraintEnd_toEndOf="@id/recycler_left"
+        app:layout_constraintStart_toStartOf="@id/recycler_left"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintTop_toTopOf="@id/recycler_left"
+        android:visibility="invisible"
         />
 
     <TextView
@@ -106,27 +146,30 @@
         android:layout_marginBottom="120dp"
         android:background="@drawable/rect_outline"
         app:layout_constraintBottom_toBottomOf="@id/iv_background"
-        app:layout_constraintTop_toTopOf="@id/guideline_hor_35"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_45"
         app:layout_constraintStart_toStartOf="@id/iv_background"
         app:layout_constraintEnd_toEndOf="@id/iv_background"/>
+
+
+
 
 
     <ImageView
         android:id="@+id/iv_create_picture"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:layout_marginStart="75dp"
         android:layout_marginEnd="75dp"
         android:layout_marginBottom="125dp"
         android:src="@drawable/cup"
         app:layout_constraintBottom_toBottomOf="@id/iv_background"
-        app:layout_constraintTop_toTopOf="@id/guideline_hor_35"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_45"
         app:layout_constraintStart_toStartOf="@id/iv_background"
         app:layout_constraintEnd_toEndOf="@id/iv_background"/>
 
     <Button
-        android:id="@+id/math_upload_button"
+        android:id="@+id/bu_art_create"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="@string/create_picture"
@@ -140,11 +183,11 @@
         />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_hor_35"
+        android:id="@+id/guideline_hor_45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.45" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_ver_50"
@@ -152,5 +195,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintBottom_toTopOf="@+id/text_art"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_background" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

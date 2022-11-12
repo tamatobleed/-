@@ -1,70 +1,67 @@
 package com.dr.sofeware.ui.art;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.dr.sofeware.R;
-
-import java.util.List;
-import java.util.function.ToDoubleBiFunction;
 
 
 public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.ViewHolder> {
 
-    private List<String> localDataSet;
+    private final int NUM_PICTURE;
+    private final Context mContext;
+    private final String HORIZON_POS;
 
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder).
-     */
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final ImageView imageView;
+        private final ImageView iv_picture;
+
 
         public ViewHolder(View view) {
             super(view);
-            // Define click listener for the ViewHolder's View
-
-            imageView = (ImageView) view.findViewById(R.id.iv_origin_picture);
+            iv_picture = (ImageView) view.findViewById(R.id.iv_origin_picture);
         }
-
-        public ImageView getImageView() {
-            return imageView;
+        public ImageView getIvPicture() {
+            return iv_picture;
         }
     }
 
     //TODO:改造为图片资源
     //TODO：改造为获得一个图片组
-    public PictureAdapter(List<String> dataSet) {
-        localDataSet = dataSet;
+    public PictureAdapter(int NUM_PICTURE, Context context,String hORIZON_POS) {
+        this.mContext=context;
+        this.NUM_PICTURE = NUM_PICTURE;
+        this.HORIZON_POS=hORIZON_POS;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.art_origin_picture_item, viewGroup, false);
-
+                .inflate(R.layout.item_art_origin_picture, viewGroup, false);
         return new ViewHolder(view);
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        //TODO:改造为图片资源
-     //   viewHolder.getImageView().setImageBitmap(localDataSet[position]);
+        int temp=position+1;
+        String str=HORIZON_POS+temp;
+        int resId = mContext.getResources().getIdentifier(
+                str, "drawable", mContext.getPackageName());//通过名字获取ID
+        viewHolder.getIvPicture().setImageResource(resId);
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return localDataSet.size();
+        return NUM_PICTURE;
     }
+
+
 }

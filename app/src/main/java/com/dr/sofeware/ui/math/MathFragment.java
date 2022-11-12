@@ -27,19 +27,18 @@ import java.util.Objects;
 // 5，题目查看界面点击返回按钮，返回初始页面；✓
 
 //TODO：附加
-// APP加载页
+// APP加载页 ✓
 
 
 //TODO：ART
-// 0.获得png图片资源，5*5=25，共计35张，从emojimix里选择有趣的
-// 1.将图片资源存储在APP中
-// 问题不大，可以直接放在资源文件drawable
-// 2.根据用户两个滚动器选择的图片数组的序号，确定对应的生成图片地址；
-// 函数 String micPicture*(Integer position1,Integer position2)
-// 难的不在于函数，而在于与图片资源的组织协调。几号图片加几号图片，等于几号图片
+// 0.获得png图片资源，5*5=25，共计35张，从emojimix里选择有趣的；✓
+// 1.将图片资源存储在APP中 ；✓
+// 1.1 构建art的fragment，使得双滚轮可以正常使用；✓
+// 问题不大，可以直接放在资源文件drawable；✓
+// 2.根据用户两个滚动器选择的图片数组的序号，确定对应的生成图片地址；；✓
+// 函数 String micPicture(int position_left,int position_right)；✓
 
 
-// ui人员完成
 
 
 //TODO：提高

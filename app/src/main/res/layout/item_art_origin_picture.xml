@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="130dp"
+    android:layout_height="210dp">
+
+    <ImageView
+        android:id="@+id/iv_origin_picture"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/cup" />
+
+
+</LinearLayout>  
