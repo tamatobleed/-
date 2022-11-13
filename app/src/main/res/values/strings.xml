@@ -2,6 +2,7 @@
     <string name="app_name">I Learn</string>
     <string name="title_home">首页</string>
     <string name="title_math">数学</string>
+    <string name="title_guess">文字猜谜</string>
     <string name="title_art">美术</string>
     <string name="title_language">语言</string>
     <string name="caculate">运算</string>
@@ -10,6 +11,7 @@
     <string name="math_button_bottom">生成问题</string>
     <string name="math_button_top">加减运算</string>
     <string name="math_question">问题</string>
+    <string name="language_question">谜语</string>
     <string name="math_answer">请输入问题答案</string>
     <string name="math_answer_confirm">确认</string>
     <string name="math_answer_hand_in">上交答卷</string>
@@ -17,6 +19,7 @@
     <string name="math_complete">完成答题</string>
     <string name="back">返回</string>
     <string name="math_answer_check">查看答题情况</string>
+    <string name="check_answer">查看答案</string>
     <string name="congratulation">恭喜！！</string>
     <string name="create_picture">生成图像</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -26,5 +29,6 @@
     <string name="aer_explain">请描述希望生成的图片</string>
     <string name="art_network">文生图模式</string>
     <string name="ai_painting">AI绘图</string>
+    <string name="prompt">提示</string>
 
 </resources>
