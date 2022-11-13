@@ -26,7 +26,17 @@
         android:id="@+id/navigation_art"
         android:name="com.dr.sofeware.ui.art.ArtFragment"
         android:label="@string/title_art"
-        tools:layout="@layout/fragment_art" />
+        tools:layout="@layout/fragment_art" >
+        <action
+            android:id="@+id/action_navigation_art_to_navigation_art_network"
+            app:destination="@id/navigation_art_network" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_art_network"
+        android:name="com.dr.sofeware.ui.art.ArtNetWorkFragment"
+        android:label="@string/title_art"
+        tools:layout="@layout/fragment_art_network" />
 
     <fragment
         android:id="@+id/mathQuestionsFragment"

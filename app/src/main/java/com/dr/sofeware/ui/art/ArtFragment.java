@@ -46,7 +46,7 @@ public class ArtFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ArtViewModel artViewModel = new ViewModelProvider(requireActivity()).get(ArtViewModel.class);
+
         binding = FragmentArtBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
@@ -109,6 +109,16 @@ public class ArtFragment extends Fragment {
                 binding.ivCreatePicture.setImageResource(resId);
             }
         });
+
+        binding.buNetwork.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).
+                        navigate(R.id.action_navigation_art_to_navigation_art_network);
+            }
+        });
+
+
 
     }
 

@@ -39,8 +39,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="69" />
-                            <option name="y" value="28" />
+                            <option name="x" value="78" />
+                            <option name="y" value="27" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -53,6 +53,18 @@
                           <Point>
                             <option name="x" value="-452" />
                             <option name="y" value="436" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="navigation_art_network">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="7" />
+                            <option name="y" value="438" />
                           </Point>
                         </option>
                       </LayoutPositions>

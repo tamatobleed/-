@@ -3,6 +3,7 @@
     <string name="title_home">首页</string>
     <string name="title_math">数学</string>
     <string name="title_art">美术</string>
+    <string name="title_language">语言</string>
     <string name="caculate">运算</string>
     <string name="math_question2">添加数字范围</string>
     <string name="math_question1">添加问题数量</string>
@@ -22,5 +23,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="positive_integer">输入一个正整数</string>
     <string name="your_answer">你的答案是：</string>
+    <string name="aer_explain">请描述希望生成的图片</string>
+    <string name="art_network">文生图模式</string>
+    <string name="ai_painting">AI绘图</string>
 
 </resources>

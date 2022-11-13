@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/tv_math_title"
+        android:id="@+id/tv_art_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
@@ -34,7 +34,7 @@
         android:src="@drawable/rect_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_math_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_art_title"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -67,7 +67,7 @@
         android:id="@+id/imageiv_caculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_calculate"
+        android:src="@drawable/ic_calculate_math"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="@id/tv_caculate"
         app:layout_constraintEnd_toStartOf="@id/tv_caculate"
@@ -80,10 +80,10 @@
         android:id="@+id/imageiv_back_home"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_home_blod"
-        app:layout_constraintBottom_toBottomOf="@id/tv_math_title"
+        android:src="@drawable/ic_home_back"
+        app:layout_constraintBottom_toBottomOf="@id/tv_art_title"
         app:layout_constraintEnd_toStartOf="@id/tv_caculate"
-        app:layout_constraintTop_toTopOf="@id/tv_math_title"
+        app:layout_constraintTop_toTopOf="@id/tv_art_title"
         app:layout_constraintStart_toStartOf="@id/iv_background"
         app:layout_constraintHorizontal_bias="0.90"
         />
@@ -168,10 +168,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_three_dots"
-        app:layout_constraintBottom_toBottomOf="@id/tv_math_title"
+        app:layout_constraintBottom_toBottomOf="@id/tv_art_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_math_title"
-        app:layout_constraintStart_toStartOf="@id/tv_math_title"
+        app:layout_constraintTop_toTopOf="@id/tv_art_title"
+        app:layout_constraintStart_toStartOf="@id/tv_art_title"
         app:layout_constraintHorizontal_bias="0.80" />
 
     <com.jaredrummler.materialspinner.MaterialSpinner

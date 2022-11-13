@@ -48,7 +48,7 @@
         android:layout_height="80dp"
         android:text="@string/math_answer_check"
         android:textSize="20sp"
-        android:backgroundTint="#FFFF8C8C"
+        android:backgroundTint="@color/pink"
         android:textStyle="bold"
         android:clickable="true"
         app:layout_constraintTop_toTopOf="@id/tv_score"

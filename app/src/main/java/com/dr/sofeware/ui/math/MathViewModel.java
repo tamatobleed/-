@@ -20,9 +20,9 @@ public class MathViewModel extends ViewModel {
     private MathMethod mathMethod=new MathMethod();
 
     public MathViewModel() {
-        mNum = new MutableLiveData<>();
-        mAvg = new MutableLiveData<>();
-        mMode = new MutableLiveData<>();
+        mNum = new MutableLiveData<String>();
+        mAvg = new MutableLiveData<String>();
+        mMode = new MutableLiveData<String>();
         mNum.setValue("0");
         mAvg.setValue("0");
         mMode.setValue("0");

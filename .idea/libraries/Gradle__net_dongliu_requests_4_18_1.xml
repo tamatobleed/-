@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: net.dongliu:requests:4.18.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dongliu/requests/4.18.1/d82f9c76922b32ca84171caad4ee97fe9da7e594/requests-4.18.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dongliu/requests/4.18.1/320106754846303574195127f93043a758a0a67/requests-4.18.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dongliu/requests/4.18.1/53dadf03540e7c3f4f9b10c835c2ebad42efd16f/requests-4.18.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
