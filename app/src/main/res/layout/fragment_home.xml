@@ -96,7 +96,6 @@
             android:id="@+id/ed_answer"
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:inputType="phone"
             android:textSize="25sp"
             android:textStyle="bold"
             android:layout_marginStart="25dp"
