@@ -41,6 +41,8 @@ import kotlin.jvm.internal.Intrinsics;
 
 public class MathQuestionsFragment extends Fragment {
 
+    private static final int tab_show_use=1;
+
     private FragmentMathQuestionsBinding binding;
 
     private MathViewModel viewModel;
@@ -64,7 +66,7 @@ public class MathQuestionsFragment extends Fragment {
                 new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                int a=position+1;
+                int a=position+tab_show_use;
                 tab.setText(a+"");
             }
         });
